@@ -19,20 +19,23 @@
       );
 
       for (number = 0; number < quantidade_clientes; number++) {
-        let cliente = prompt("Digite nome do cliente: " + (number + 1));
-        var sexo = prompt(
-          "Digite sexo cliente 1\nM (Masculino)\nF (Feminino) "
-        );
-        var s_sexo = sexo.trim().toUpperCase() == "M" ? "M" : "F";
-        var sexo_mostra = s_sexo == "M" ? "do" : "da";
-        var valor = Number(
-          prompt("Digite o valor " + sexo_mostra + " " + cliente)
-        );
-        valor_clientes.push(valor);
+        cliente = prompt("Digite nome do cliente: " + (number + 1));
+        notas_alunos = [];
+        // sexo = prompt("Digite sexo cliente 1\nM (Masculino)\nF (Feminino) ");
+        // s_sexo = sexo.trim().toUpperCase() == "M" ? "M" : "F";
+        // sexo_mostra = s_sexo == "M" ? "do" : "da";
+        // valor = Number(prompt("Digite o valor " + sexo_mostra + " " + cliente));
+        valor_cliente1 = Number(prompt("Digite a " + (number + 1) + " valor"));
+        valor_cliente2 = Number(prompt("Digite a " + (number + 1) + " valor"));
+        notas_alunos.push(valor_cliente1);
+        notas_alunos.push(valor_cliente2);
+
+        aluno = {};
+        aluno.nome = cliente;
+        aluno.notas = notas_alunos;
+
+        valor_clientes.push(aluno);
         nome_clientes.push(cliente);
-        // var valor_total = valor_clientes.reduce((a, b) => {
-        //   return a + b;
-        // });
       }
       document.write(
         "<hr>A quantidade de pessoas sao: <b>" +
@@ -49,7 +52,7 @@
       document.write(
         "<hr>A media dos participarntes sao: <b>" + media + "<br><br>"
       );
-      // var media = valor_total / valor_clientes.length;
+      // media = valor_total / valor_clientes.length;
       if (media > 100) {
         document.write(
           "<hr>Parabens a media obtida foi maior que 100 : <b>" +
